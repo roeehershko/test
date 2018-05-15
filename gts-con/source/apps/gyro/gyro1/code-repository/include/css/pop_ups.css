@@ -1,0 +1,43 @@
+.popup_container {
+    border: 1px solid #777777;
+    width: 610px;
+    background: #FFFFFF;
+    direction: rtl;
+}
+.popup_container .inner_container {
+    padding: 10px;
+}
+.popup_container td {
+    vertical-align: middle;
+}
+.popup_container .title_container {
+    position: relative;
+    left: 10px;
+    margin-bottom: 10px;
+}
+.popup_container .title_container .title {
+    left: 0;
+    padding: 0;
+}
+.popup_container .title_container img {
+    position: relative;
+    top: 1px;
+}
+.popup_container .row_separator {
+    height: 5px;
+    font-size: 4px;
+}
+.popup_container input {
+    width: 120px;
+}
+.popup_container input.long {
+    width: 590px;
+}
+.popup_container textarea {
+    width: 590px;
+    height: 100px;
+}
+.popup_container .transparent {
+    position: relative;
+    top: 2px;
+}

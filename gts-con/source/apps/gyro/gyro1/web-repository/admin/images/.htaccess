@@ -1,0 +1,4 @@
+ExpiresActive On
+ExpiresByType image/gif A18000
+ExpiresByType image/jpeg A18000
+ExpiresByType image/png A18000

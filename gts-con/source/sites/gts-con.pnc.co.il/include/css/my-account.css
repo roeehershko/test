@@ -1,0 +1,395 @@
+h1 {cursor:pointer}
+
+textarea.hebrew {direction:rtl;text-align:right}
+textarea.english {direction:ltr;text-align:left}
+.round_box {_width:960px}
+.ltr {direction:ltr;text-align:left}
+
+.red {color:red}
+
+input#from_date__visual {width:80px;text-align:center}
+input#to_date__visual {width:80px;text-align:center}
+
+input.medium {}
+input.small {width:70px}
+input.query {width:135px}
+input.version {width:40px}
+input.estimated {width:40px}
+input[type=date] {width:140px;direction:ltr}
+
+.long {width:200px}
+
+.tickets input, .tickets select, .tickets textarea {border-radius:6px;box-sizing:border-box}
+.ticket_details input, .ticket_details select, .ticket_details textarea {border-radius:6px;box-sizing:border-box}
+.ticket_messages input, .ticket_messages select, .ticket_messages textarea {border-radius:6px;box-sizing:border-box}
+
+.tickets .description {padding:10px 0 0 0}
+.tickets .ticket.row {height:30px;line-height:30px;border-bottom:1px solid #EFEFEF;cursor:pointer}
+.tickets .row.th {border-bottom:1px dotted #666}
+.tickets .ticket.row.hover {border-bottom:1px solid #3087CE}
+.tickets .ticket.row.hover * {color:#3087CE}
+.tickets .ticket.row.th.hover {border-bottom:1px solid #EFEFEF}
+.tickets .ticket.row.th.hover * {color:#555}
+.tickets .ticket.row > div, .tickets .ticket.row .ticket_d {float:right;height:30px;line-height:30px;margin:0 5px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden} /*this second selector is for IE*/
+.tickets .ticket.row.th > div {text-transform:capitalize;font-weight:bold;cursor:default}
+.tickets .ticket.row div.id {width:90px}
+.tickets .ticket.row div.subject {width:290px}
+.tickets .ticket.row div.customer {width:120px}
+.tickets .ticket.row div.status {width:120px}
+.tickets .ticket.row div.assigned_th {width:90px}
+.tickets .ticket.row div.timestamp {width:130px;direction:ltr}
+
+/* GTS */
+
+.tickets .ticket.row div.id {width:60px}
+.tickets .ticket.row div.company_name {width:160px}
+.tickets .ticket.row div.company_number {width:100px}
+.tickets .ticket.row div.mailer_name {width:120px}
+.tickets .ticket.row div.mailer_email {width:170px}
+.tickets .ticket.row div.status {width:120px}
+.tickets .ticket.row div.note {width:20px;text-align:center;text-overflow:clip}
+.tickets .ticket.row div.created {width:80px}
+.tickets .ticket.row div.modified {width:80px}
+
+.tickets .ticket.row div.merchant_name {width:180px}
+.tickets .ticket.row div.merchant_number {width:100px}
+
+.tickets .ticket.row div.username {width:100px}
+.tickets .ticket.row div.name {width:140px}
+
+.tickets .ticket.row.signature .amount {width:160px;direction:ltr;text-align:right}
+.tickets .ticket.row.signature .cc_last_4 {width:50px}
+.tickets .ticket.row.signature .cc_exp {width:50px}
+.tickets .ticket.row.signature .cc_issuer {width:80px}
+.tickets .ticket.row.signature .credit_terms {width:80px}
+.tickets .ticket.row.signature .transaction_code {width:80px}
+.tickets .ticket.row.signature .reference_number {width:80px}
+.tickets .ticket.row.signature .merchant_name {width:100px}
+
+.tickets .ticket.row.transaction div.id {width:60px}
+.tickets .ticket.row.transaction .cancel {width:15px;margin-right:0;text-align:right}
+.tickets .ticket.row.transaction .cancel a {display:block;text-decoration:none;font-size:1.4em;color:#999}
+.tickets .ticket.row.transaction .cancel a:hover {color:#3087CE}
+.tickets .ticket.row.transaction .trans_status {width:30px;text-align:center}
+.tickets .ticket.row.transaction .trans_status img {height:26px;margin:2px auto}
+.tickets .ticket.row.transaction .amount {width:105px;direction:ltr;text-align:right}
+.tickets .ticket.row.transaction .cc_last_4 {width:50px}
+.tickets .ticket.row.transaction .cc_exp {width:50px}
+.tickets .ticket.row.transaction .cc_issuer {width:80px}
+.tickets .ticket.row.transaction .cc_type {width:70px;direction:ltr}
+.tickets .ticket.row.transaction .credit_terms {width:80px}
+.tickets .ticket.row.transaction .transaction_code {width:80px}
+.tickets .ticket.row.transaction .reference_number {width:80px}
+.tickets .ticket.row.transaction .merchant_name {width:100px}
+.tickets .ticket.row.transaction .trans_type {width:80px}
+.tickets .ticket.row.transaction .authorization_number {width:70px}
+.tickets .ticket.row.transaction .voucher_number {width:70px}
+.tickets .ticket.row.transaction .error_description {width:180px}
+.tickets .ticket.row.transaction .invoice_link {width:30px;margin-left:0;text-align:left}
+.tickets .ticket.row.transaction .invoice_link img {height:26px;margin:2px auto}
+
+.tickets .ticket.row.recurring_order .ro_id {width:50px}
+.tickets .ticket.row.recurring_order .name {width:120px}
+.tickets .ticket.row.recurring_order .amount {width:70px;direction:ltr;text-align:right}
+.tickets .ticket.row.recurring_order .duedate__visual {width:80px}
+.tickets .ticket.row.recurring_order .repetitions {width:80px}
+.tickets .ticket.row.recurring_order .interval__visual {width:50px}
+.tickets .ticket.row.recurring_order .cc_type {width:80px}
+.tickets .ticket.row.recurring_order .cc_last_4 {width:50px}
+.tickets .ticket.row.recurring_order .cc_exp {width:50px}
+.tickets .ticket.row.recurring_order .link {width:50px;text-overflow:clip}
+.tickets .ticket.row.recurring_order .link > a {text-decoration:underline}
+.tickets .ticket.row.recurring_order .link > a:hover {text-decoration:none}
+
+.tickets .ticket.row.merchant .username {width:80px}
+.tickets .ticket.row.merchant .merchant_number {width:60px}
+.tickets .ticket.row.merchant .merchant_type {width:70px}
+.tickets .ticket.row.merchant .merchant_status {width:40px}
+.tickets .ticket.row.merchant .company_name {width:80px}
+/*.tickets .ticket.row.merchant .company_email {width:160px;text-align:left;direction:ltr}*/
+.tickets .ticket.row.th.merchant .company_email {text-align:right;direction:rtl}
+.tickets .ticket.row.merchant .card_readers {width:40px}
+.tickets .ticket.row.merchant .cc_count {width:30px}
+.tickets .ticket.row.merchant .checks_count {width:35px}
+.tickets .ticket.row.merchant .cash_count {width:35px}
+.tickets .ticket.row.merchant .enable_invoices {width:30px}
+.tickets .ticket.row.merchant .mobile {width:30px}
+.tickets .ticket.row.merchant .recurring_order {width:30px}
+.tickets .ticket.row.merchant .bounce {width:30px}
+.tickets .ticket.row.merchant .created {width:80px}
+.tickets .ticket.row.merchant .pos_number {width:100px}
+.tickets .ticket.row.merchant .report_inactivity {width:120px}
+.tickets .ticket.row.merchant .associated_user {width:220px}
+.tickets .ticket.row.merchant .associated_user > select {width:200px}
+
+.tickets .ticket.row.merchant.user .email {width:150px}
+.tickets .ticket.row.merchant.user .company {width:130px}
+.tickets .ticket.row.merchant.user .mobile {width:90px}
+.tickets .ticket.row.merchant.user .type {width:60px}
+
+/* End of GTS */
+
+.tickets .ticket.row.pending {background:#85B9E2}
+.tickets .ticket.row.pending * {color:#FFF}
+.tickets .ticket.row.accepted {background:#85B9E2}
+.tickets .ticket.row.accepted * {color:#FFF}
+.tickets .ticket.row.assigned {background:#EAEAEA}
+.tickets .ticket.row.price_quote {background:#417CDA}
+.tickets .ticket.row.price_quote * {color:#FFF}
+.tickets .ticket.row.closed {background:#FFF}
+.tickets .ticket.row.closed * {color:#CCC}
+.tickets .ticket.row.freeze {background:#FFFFCC}
+.tickets .ticket.row.freeze * {color:#AAA}
+.tickets .ticket.row.urgent {background:#BF0000}
+.tickets .ticket.row.urgent * {color:#CCC}
+
+.tickets .ticket.task * {color:#333}
+.tickets .ticket.task.row.assigned {background:#FF9900}
+.tickets .ticket.task.row.testing {background:#A3C2F6}
+.tickets .ticket.task.row.deploying {background:#A3C2F6}
+.tickets .ticket.task.row.completed {background:#B6D7A8}
+.tickets .ticket.task.row.closed {background:#B6D7A8}
+.tickets .ticket.task.row.closed * {color:#333}
+.tickets .ticket.task.row.waiting_for_confirmation {background:#CB9CEB}
+.tickets .ticket.task.row.pending {background:transparent}
+.tickets .ticket.task.row.pending * {color:#333}
+.tickets .ticket.task.row.freeze {background:transparent}
+
+.tickets .ticket.task.row div.id {width:50px}
+.tickets .ticket.task.row div.subject {width:225px}
+.tickets .ticket.task.row div.version {width:40px}
+.tickets .ticket.task.row div.customer {width:100px}
+.tickets .ticket.task.row div.company {width:70px}
+.tickets .ticket.task.row div.project {width:100px}
+.tickets .ticket.task.row div.status {width:80px}
+.tickets .ticket.task.row div.hours {width:65px}
+.tickets .ticket.task.row div.hours.red {color:#BF0000}
+.tickets .ticket.task.row div.assigned_th {width:100px}
+.tickets .ticket.task.row div.timestamp {width:120px}
+.tickets .ticket.task.row div.timestamp.from_date {width:80px}
+.tickets .ticket.task.row div.timestamp.to_date {width:80px}
+.tickets .ticket.task.row div.timestamp input {display:inline;width:auto;border:none;background:transparent}
+
+.tickets .ticket.sub.task.row .id {color:#FFF;background:#FFF;width:60px;margin:0}
+
+.ticket_title {padding:10px 10px 0 10px;line-height:150%;font-size:24px;font-weight:bold}
+.ticket_details {line-height:150%;padding:0 10px 10px 10px;font-size:16px}
+.ticket_details span {display:inline-block;width:80px;line-height:150%;font-size:16px;font-weight:bold}
+.ticket_details span.customer_title {display:inline;font-size:14px;font-weight:normal;}
+.ticket_details a#customer_change_control {font-size:10px;cursor:pointer;}
+.ticket_details a#customer_change_control span {display:inline;font-size:10px;cursor:pointer;}
+.ticket_details select {width:150px}
+.ticket_details select#customers_list {display:none;width:250px;}
+
+.ticket_details a.save_version {font-size:11px;text-transform:uppercase;font-weight:normal;font-variant:small-caps;cursor:pointer}
+.ticket_details a.save_estimated {font-size:11px;text-transform:uppercase;font-weight:normal;font-variant:small-caps;cursor:pointer}
+
+.ticket_form_container {display:none}
+.ticket_form {
+	position:relative;top:0;left:0;padding:10px 10px 20px 10px;margin:0 0 10px 0;/*border:1px solid #CCC*/;background:#FAFAFA;
+	-webkit-column-count:2;-moz-column-count:2;-ms-column-count:2;column-count:2;background-color: rgba(255, 255, 255, 0);
+}
+.ticket_form .field_container {
+	box-sizing:border-box;padding:0 0 20px 10px;
+	-webkit-column-break-inside:avoid;-moz-column-break-inside:avoid;-ms-column-break-inside:avoid;column-break-inside:avoid;
+}
+.ticket_form .field_container .label {line-height:100%;font-size:16px;font-weight:bold}
+.ticket_form .field_container .annotation {width:90%;line-height:150%;font-size:14px;font-weight:normal;color:#999}
+.ticket_form .field_container .annotation.highlight {color:#DC1F26!important}
+.ticket_form .field_container .annotation img {height:120px;border:1px solid #CCC;margin:10px 0 0 0}
+.ticket_form .field_container .annotation.payment_info{direction: ltr;float: right;}
+.ticket_form .field_container .field {position:relative;top:0;left:0}
+.ticket_form .field_container .field * {position:relative;top:0;left:0;color:#333}
+.ticket_form .field_container .field input {width:100%;box-sizing:border-box;padding:3px;height:25px;margin:0;text-align:right;}
+.ticket_form .field_container .field.password input {font-family:Courier}
+.ticket_form .field_container .field select {box-sizing:border-box;width:100%;height:25px;font-size:18px;}
+.ticket_form .field_container .field textarea {box-sizing:border-box;width:100%;max-width:882px;height:200px;padding:3px;margin:0 0 10px 0;background:#FFF}
+.ticket_form .submit_container {}
+.ticket_form .submit_container button {float:left;margin-right:10px;margin-bottom:10px}
+.ticket_form .submit_container button input {width:auto;height:auto;line-height:auto;padding:0;border:none;margin:0;background:transparent}
+.ticket_form .submit_container button.delete {float:right}
+.ticket_form .submit_container button.close {float:right}
+
+.ticket_form .credit.data {display:none}
+.ticket_form .check.data {display:none}
+
+.ticket_form .invoice {display:none}
+
+.message_form_container {display:none}
+.message_form {padding:10px;margin:0 0 10px 0;border:1px solid #CCC;background:#FAFAFA}
+.message_form .field_container {}
+.message_form .field_container .label {line-height:100%;font-size:16px;font-weight:bold}
+.message_form .field_container .annotation {line-height:150%;font-size:14px;font-weight:normal;color:#999}
+.message_form .field_container .field {position:relative;top:0;left:0}
+.message_form .field_container .field * {color:#333}
+.message_form .field_container .field input {width:40%;padding:3px;margin:0 0 10px 0}
+.message_form .field_container .field select {width:200px;font-size:18px;margin:0 0 10px 0}
+.message_form .field_container .field textarea {width:860px;height:200px;padding:3px;;margin:0 0 10px 0;background:#FFF}
+.message_form .submit_container {height:25px}
+.message_form .submit_container button {float:left}
+.message_form .submit_container button input {width:auto;height:auto;line-height:auto;padding:0;border:none;margin:0;background:transparent}
+
+.ticket_messages {padding:0 10px 10px 10px}
+
+.actions {height:40px}
+.actions .add {float:right}
+.actions button {float:left;cursor:pointer}
+.actions button.back {float:left}
+.actions button.refresh {margin-left:10px}
+/*Remove back button by request of the customer. Class hidden were add in 1- gts-console-error line:146 and gts-console-transaction line:148 */
+.actions button.refresh.hidden {visibility: hidden;width: 0;margin: 0;padding: 0;}
+.actions button.refresh span {font-size:12px}
+.actions button.export {margin-left:10px}
+.actions button.change_password {margin-left:10px}
+
+.ticket_messages .message {padding:10px;margin:0 0 10px 0;border:1px solid #CCC;background:#FAFAFA}
+.ticket_messages .message .elapsed {float:left;cursor:help}
+.ticket_messages .message .elapsed input {width:40px;text-align:center;background:transparent}
+.ticket_messages .message .message_title {font-weight:bold;padding:0 0 10px 0}
+.ticket_messages .message .message_title input {font-weight:bold;background:transparent}
+.ticket_messages .message .message_title select {font-weight:bold;background:transparent}
+.ticket_messages .message .message_description {overflow-x:hidden;width:868px;line-height:145%}
+.ticket_messages .message.english .message_description {direction:ltr;text-align:left}
+.ticket_messages .message.hebrew .message_description {direction:rtl;text-align:right}
+.ticket_messages .message .message_links {margin:5px 0 0 0;direction:ltr;text-align:left}
+.ticket_messages .message .message_links .m_link {height:16px;line-height:16px;text-align:left;direction:ltr;white-space:nowrap;text-overflow:hidden;overflow:hidden}
+.ticket_messages .message.english .message_links {direction:ltr}
+.ticket_messages .message.english .message_links .m_link {}
+
+.validation {position:absolute;top:-35px;left:15px;width:20px;height:25px;line-height:25px;text-align:center;margin:0 15px 0 0}
+.validation span {display:block;position:absolute;font-size:40px}
+.validation span.ok {left:-10px;color:#3087CE!important;font-size:50px}
+.validation span.fail {color:#DC1F26!important}
+
+.navigation {line-height:30px;text-align:center}
+.navigation .bar {text-align:center;line-height:30px}
+.navigation .bar * {text-align:center;line-height:30px}
+.navigation .bar a {text-decoration:none;cursor:pointer}
+.navigation .bar a.disabled {color:#666;cursor:default}
+.navigation .bar a:hover {text-decoration:none;color:#999}
+.navigation .bar .selected {text-decoration:none;color:#999}
+.navigation .bar .arrow.left {text-decoration:none;font-size:16px}
+.navigation .bar .arrow.right {text-decoration:none;font-size:16px}
+.navigation.filters {background:none;line-height:30px;border:none;display:table;width:100%;border-bottom:1px dotted #EFEFEF}
+.navigation.filters .s_title {color:#000;font-size:18px;text-align:center}
+.navigation.filters .text {color:#000;float:right;font-size:14px;direction:rtl}
+.navigation.filters .text b {color:#000}
+.navigation.filters .filter_container {color:#000;float:left;font-size:14px;line-height:30px}
+.navigation.filters .filter_container select {margin-top:5px\9;width:60px}
+
+.ac_results {padding:0;border:1px solid #CCC;overflow:hidden;z-index:99999;background:#EAEAEA}
+.ac_results * {font-size:14px;line-height:25px;color:#000;direction:rtl}
+.ac_results ul {list-style-position:outside;list-style:url(/pnc.co.il/images/global/spacer.gif);padding:0;margin:0;direction:rtl}
+.ac_results li {color:#000;margin:0;padding:0 5px 0 5px;cursor:default;display:block;overflow:hidden}
+.ac_loading {background:white url(/pnc.co.il/images/global/loader_16x16.gif) left center no-repeat}
+.ac_odd {color:#000;background-color:#FFF}
+.ac_over {background:#85B9E2;color:#FFF;cursor:pointer}
+
+.search_container {padding:10px 0;border-top:1px dotted #EAEAEA;border-bottom:1px dotted #EAEAEA}
+.search_container button input {width:auto;height:auto;line-height:auto;padding:0;border:none;margin:0;background:transparent}
+.no_results {padding:15px 0}
+
+#graph {direction:ltr;width:910px;height:150px;margin:10px 0}
+#graph * {direction:ltr}
+
+.graphs {display:none;direction:ltr;width:910px;height:150px;margin:10px 0}
+.graphs * {direction:ltr}
+.graphs > div {border:1px solid #EEE;border-radius:20px;padding:10px;box-sizing:border-box}
+.graphs #graph__transactions_amounts {float:left;width:345px;margin:0}
+.graphs #graph__transactions_counts {float:left;width:345px;margin:0 10px}
+.graphs #graph__transactions_types {float:left;width:200px;margin:0}
+
+.graphs_tasks {display:table;box-sizing:border-box;width:100%;margin:10px 0;direction:ltr;overflow:hidden}
+.graphs_tasks * {font-size:12px;direction:ltr}
+.graphs_tasks > div {float:left;box-sizing:border-box;width:450px;height:280px;border:1px solid #EEE;border-radius:20px;padding:10px}
+.graphs_tasks > div:first-child {margin-right:10px}
+.graphs_tasks > div svg g:nth-child(3) > text {font-size:1.6em}
+.graphs_tasks > div svg g:nth-child(4) > g > text {font-size:1em}
+.graphs_tasks > div svg g:last-child > g > g > text {font-size:0.8em}
+
+.graphs_tasks > #graph__elapsed_hours {width:560px}
+.graphs_tasks > #graph__estimated_vs_elapsed {width:320px}
+
+.graphs_tasks > #graph__estimated_vs_elapsed.total {width:450px}
+.graphs_tasks > #graph__elapsed_hours_per_phase.total {width:450px}
+
+.graphs > #graph__hours_per_user {width:910px;margin:10px 0 0 0}
+
+.generate_password {cursor: pointer;position: absolute;top:4px;left:5px}
+a.button {display:block;border-radius:10px;padding:10px 20px;margin:20px;font-size:20px;text-align:center;text-decoration:none;background:#DDD}
+
+
+/* ## */
+
+@media all and (max-width:599px) {
+
+	.graphs {height:auto}
+	.graphs * {font-size:10px}
+	.graphs > div {width:100%!important;margin:5px 0!important}
+
+	.actions {display:table;width:100%;padding:10px 0}
+	.actions button {float:left!important;clear:both!important;margin:0 0 10px 0!important}
+	.actions button.back {float:left!important;clear:none!important}
+	.actions button.add {float:right!important;clear:none!important}
+
+	.search_container {box-sizing:border-box;width:100%;margin:0;padding:0 0 10px 0}
+	/*.search_container span {display:block;float:right;clear:right;width:50%}*/
+	.search_container select {float:none;clear:left;box-sizing:border-box;width:100%}
+	.search_container input {float:none;clear:left;box-sizing:border-box;width:100%!important}
+	.search_container label {float:left}
+	.search_container input.checkbox {float:none;width:auto!important}
+	/*.search_container button {float:left;clear:both;margin:10px 0 0 0}*/
+
+	.ticket_title {padding:0 0 10px 0;line-height:100%;font-size:20px}
+	.ticket_details {padding:0 0 10px 0}
+	.ticket_messages {padding:0 0 10px 0}
+
+	.tickets .ticket.row {position:relative;top:0;left:0;display:table;box-sizing:border-box;width:100%;height:auto;line-height:100%;margin:0 0 1px 0;padding:5px}
+	.tickets .ticket.row > div, .tickets .ticket.row .ticket_d {float:none!important;height:auto!important;line-height:20px;padding:0;margin:0;white-space:normal}
+	.tickets .ticket.row .ticket_d.id {display:inline;width:auto}
+		.tickets .ticket.row .ticket_d.id:before {content:'[ '}
+		.tickets .ticket.row .ticket_d.id:after {content:' ] '}
+	.tickets .ticket.row .ticket_d.subject {display:inline;width:auto}
+	.tickets .ticket.row .ticket_d.status {display:inline;width:auto}
+		.tickets .ticket.row .ticket_d.status:before {content:' ('}
+		.tickets .ticket.row .ticket_d.status:after {content:') '}
+	.tickets .ticket.row .ticket_d.version {display:none}
+	.tickets .ticket.row .ticket_d.company {position:absolute;bottom:5px;left:5px;width:50%;font-size:0.8em}
+	.tickets .ticket.row .ticket_d.customer {display:none}
+	.tickets .ticket.row .ticket_d.assigned_th {display:none}
+	.tickets .ticket.row .ticket_d.timestamp {float:right!important;width:100%;font-size:0.8em;text-align:right}
+	.tickets .ticket.row .ticket_d.from_date {display:none}
+
+	.tickets .ticket.sub.row {width:95%;left:5%}
+	.tickets .ticket.sub.row .ticket_d.id {display:none}
+
+	.tickets .row.th {display:none}
+
+	.ticket_messages .message .message_description {width:auto}
+
+	.ticket_form .field_container .field input {box-sizing:border-box;width:100%}
+	.ticket_form .field_container .field textarea {box-sizing:border-box;width:100%}
+
+	.message_form .field_container .field input {box-sizing:border-box;width:100%}
+	.message_form .field_container .field textarea {box-sizing:border-box;width:100%}
+
+	.ticket_details span {width:40%}
+	.ticket_details select {width:64%}
+
+	.navigation.filters {border-bottom:none}
+	.navigation.filters * {font-size:0.8em;color:#999!important}
+	.navigation.filters .filter_container {display:none}
+}
+.ui-dialog {direction: rtl;}
+.ui-widget-header {background: rgba(255, 222, 173, 0);color: #222222/*{fcHeader}*/;font-weight: bold;border: none;}
+.ticket_form .submit_container {font-size: 18px;column-span:all;text-align:left;padding-top: 10px;}
+.ticket_form .submit_container button {float: none;width: auto;height:auto;}
+.ticket_form .submit_container .submit_delete_btns_container {margin: 10px 0 0 0;font-size: 18px;}
+.ticket_form .submit_container .submit_delete_btns_container .submit_fix {float: left;width: auto;height:auto;}
+.ticket_form .submit_container .submit_delete_btns_container .delete {}
+.tickets .ticket.row.merchant.selected {border-bottom:1px solid #3087CE}
+.tickets .ticket.row.merchant.selected .ticket_d {color:#3087CE}
+.ticket.row.transaction.selected {border-bottom:1px solid #3087CE}
+.ticket.row.transaction.selected .ticket_d{color:#3087CE}
+.none_scroll{overflow: hidden;}
+.direct_access_password {cursor: pointer;position: absolute;top:4px;left:5px;background-color: #fff;padding-right: 7px}

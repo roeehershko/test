@@ -1,0 +1,7 @@
+.ac_results {padding:0;border:1px solid black;overflow:hidden;z-index:99999;background:white}
+.ac_results * {font-size:15px;line-height:20px}
+.ac_results ul {width:100%;height:200px;list-style-position:outside;list-style:url(/images/global/spacer.gif);padding:0;margin:0}
+.ac_results li {margin:0;padding:0 5px 0 5px;cursor:default;display:block;overflow:hidden}
+.ac_loading {background:white url(/images/global/loader_16x16.gif) right center no-repeat}
+.ac_odd {background:#EFEFEF}
+.ac_over {color:white;background:#CCC}

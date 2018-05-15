@@ -1,0 +1,49 @@
+.tickets .ticket.row > div, .tickets .ticket.row .ticket_d {float:left}
+.tickets .ticket.row.transaction .amount {text-align:left}
+.tickets .ticket.row.th.merchant .company_email {text-align:left;direction:ltr}
+
+.ticket_messages .message .elapsed {float:right}
+
+.ticket_details span {width:100px}
+
+.ticket_form .submit_container {left:auto;right:10px}
+.ticket_form .submit_container button {float:right;margin-right:0;margin-left:5px}
+
+.ticket_form .submit_container button.delete {float:left}
+.ticket_form .submit_container button.close {float:left}
+
+.message_form .submit_container button {float:right}
+
+.actions .add {float:left}
+.actions button {float:right}
+.actions button.back {float:right}
+.actions button.refresh {margin-left:0;margin-right:10px}
+
+.actions button.export {margin-left:0;margin-right:10px}
+.actions button.change_password {margin-left:0;margin-right:10px}
+
+.validation {left:auto;right:15px;margin:0 0 0 15px}
+.validation span.ok {left:auto;right:-10px}
+
+.navigation.filters .text {float:left;direction:ltr}
+.navigation.filters .filter_container {float:right}
+
+.ac_results * {direction:ltr}
+.ac_results ul {direction:ltr}
+
+.ac_loading {background-position:right center}
+
+/* ## */
+
+@media all and (max-width:599px) {
+	
+	actions button {float:right!important;clear:both!important;margin:0 0 10px 0!important}
+	.actions button.back {float:right!important}
+	.actions button.add {float:left!important}
+	
+	.search_container span {float:left;clear:left}
+	.search_container select {float:left;clear:right}
+	.search_container input {float:left;clear:right}
+	.search_container button {float:right}
+	
+}

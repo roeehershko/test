@@ -1,0 +1,30 @@
+version: 0.0
+os: linux
+files:
+  - source: source/apps
+    destination: /var/www/apps
+  - source: source/sites
+    destination: /var/www/sites
+  - source: conf/httpd/conf
+    destination: /etc/httpd/conf
+  - source: conf/httpd/conf.d
+    destination: /etc/httpd/conf.d
+  - source: conf/httpd/conf.modules.d
+    destination: /etc/httpd/conf.modules.d
+  - source: conf/httpd-ssl-pass-dialog
+    destination: /usr/libexec/httpd-ssl-pass-dialog
+  - source: conf/php.ini
+    destination: /usr/local/lib
+hooks:
+  ApplicationStop :
+    - location: conf/app-stop.sh
+      timeout: 2000
+      runas: root
+  ApplicationStart:
+    - location: conf/app-start.sh
+      timeout: 2000
+      runas: root
+  BeforeInstall:
+    - location: conf/pre-install.sh
+      timeout: 2000
+      runas: root

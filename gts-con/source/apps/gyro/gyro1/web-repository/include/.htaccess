@@ -1,0 +1,3 @@
+<Files PIE.htc>
+    AddHandler text/x-component .htc
+</Files>

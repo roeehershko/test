@@ -1,0 +1,102 @@
+.sub_title {
+	color: #CCCCCC;
+	line-height: 18px;
+	font-weight: bold;
+}
+.huge_blue {
+	font-size: 22px;
+	line-height:50px;
+	color: #3087CE;
+}
+.huge_black {
+	font-size: 22px;
+	line-height:30px;
+	font-weight:bold;
+	color: #3087CE;
+}
+.huge_white {
+	font-size: 22px;
+	line-height:30px;
+	color:#CCC;
+}
+.medium_colored {
+	font-size: 14px;
+	color: #3087CE;
+}
+.medium_black {
+	font-size: 14px;
+	color:#000;
+}
+.medium_black_bold {
+	font-size: 14px;
+	font-weight:bold;
+	color:#000;
+}
+.medium {
+	font-size: 14px;
+}
+.colored {
+	color: #3087CE;
+}
+.default {
+
+}
+
+* {
+    font-family: verdana;
+    font-size: 11px;
+}
+
+ol {
+	padding: 0;
+	margin: 5px 20px;
+}
+ul {
+	/*list-style: url(../../images/global/bulletin.gif);*/
+	padding: 0 20px;
+	margin: 0;
+}
+li {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	margin: 0;
+	padding: 0;
+}
+
+td {
+    vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+
+div,p,h1,h2,h3 {
+	margin: 0;
+	padding: 0;
+}
+span {
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+img {
+    border: 0;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: underline;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+}

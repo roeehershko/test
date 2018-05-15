@@ -1,0 +1,57 @@
+version: "3.3"
+services:
+  nginx:
+    build: ./nginx
+    env_file:
+      - ./.env
+    depends_on:
+      - mysql
+      - gts-app
+      - gts-con
+    ports:
+      - 443:443
+      - 80:80
+    networks:
+      backend:
+  gts-con:
+    build: ./gts-con
+    volumes:
+      - ./gts-con/source/apps:/var/www/apps
+      - ./gts-con/source/sites:/var/www/sites
+    networks:
+      backend:
+        aliases:
+          - ${CON_HOST}
+    env_file:
+      - ./.env
+    depends_on:
+      - mysql
+  gts-app:
+    build: ./gts-app
+    volumes:
+      - ./gts-app/source/apps:/var/www/apps
+      - ./gts-app/source/sites:/var/www/sites
+    networks:
+      backend:
+        aliases:
+          - ${APP_HOST}
+    ports:
+      - 8080:443
+    env_file:
+      - ./.env
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.6.40
+    ports:
+      - 3306:3306
+    networks:
+      - backend
+    volumes:
+      - mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+volumes:
+    mysqldata:
+networks:
+  backend:

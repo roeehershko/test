@@ -1,0 +1,43 @@
+
+.description {direction:ltr}
+.description * {direction:ltr}
+
+#frame #header #menubar {direction:ltr}
+#frame #middle #content {direction:ltr}
+.top_container {direction:ltr}
+.middle_container {direction:ltr}
+.btm_container {direction:ltr}
+
+.new .toolbar_container .box.toolbar a {float:left}
+.new .toolbar_container .box.toolbar a:first-child {
+	-webkit-border-radius:0 0 0 10px;-moz-border-radius:0 0 0 10px;border-radius:0 0 0 10px;
+}
+.new .toolbar_container .box.toolbar a:last-child {
+	-webkit-border-radius:0 0 10px 0;-moz-border-radius:0 0 10px 0;border-radius:0 0 10px 0;
+}
+
+.new .content .box.showcase .title.small {direction:ltr}
+.new .content .box.showcase .sub_title.small {direction:ltr}
+.new .content .box.showcase .short_description {direction:ltr}
+.new .content .slider .jcarousel-item-horizontal h2 {direction:ltr}
+.new .content .slider .jcarousel-item-horizontal h3 {direction:ltr}
+.new .content .box.flex h1 {direction:ltr}
+.new .content .box.flex .description {text-align:left}
+
+/* ## */
+
+.wizard .close {left:auto;right:10px}
+.wizard .container {direction:ltr;text-align:left}
+.wizard .container .button {float:right}
+.wizard .container .field {float:left}
+
+/* ## */
+
+@media all and (max-width:599px) {
+	
+	.new .toolbar_container .box.toolbar a:first-child {-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+	.new .toolbar_container .box.toolbar a:last-child {-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+	.new .toolbar_container .box.toolbar a:nth-child(6n+6) {-webkit-border-radius:0 0 10px 0;-moz-border-radius:0 0 10px 0;border-radius:0 0 10px 0}
+	.new .toolbar_container .box.toolbar a:nth-child(4n+4) {-webkit-border-radius:0 0 0 10px;-moz-border-radius:0 0 0 10px;border-radius:0 0 0 10px}
+	
+}

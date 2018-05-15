@@ -1,0 +1,46 @@
+#talkbacks {margin-bottom:20px}
+#talkbacks * {font-size:14px;color:#333;direction:ltr}
+#talkbacks .tab {padding:0 10px 0 10px;height:22px;line-height:22px;margin:0 0 0 1px;background:#EFEFEF;border-color:#F7F7F7;color:#333;cursor:pointer;position:relative;left:-1px}
+#talkbacks .tab.highlighted {height:22px;line-height:22px;background:#F7F7F7;border:1px solid #CCC;border-bottom:1px solid #F7F7F7;color:#333;position:relative;top:1px}
+#talkbacks .bulletin {font-size:10px;color:#CCC}
+#talkbacks .container {background:#F7F7F7;border:1px solid #CCC;padding:10px}
+#talkbacks .row_seperator {height:5px;font-size:4px}
+#talkbacks table td {vertical-align:middle}
+#talkbacks .left_part {width:6px;height:20px;line-height:20px}
+#talkbacks .middle_part {height:20px;line-height:20px}
+#talkbacks .right_part {width:6px;height:20px;line-height:20px}
+#talkbacks .t_name {text-align:left}
+#talkbacks div.t_title {font-weight:normal;text-align:left;color:#CCC;cursor:pointer}
+#talkbacks span.t_title {font-weight:bold;text-align:left;text-decoration:underline}
+#talkbacks .t_sub_title {text-decoration:underline;text-align:left;cursor:pointer}
+#talkbacks .timestamp {direction:ltr;text-align:left}
+#talkbacks .t_container {text-align:left;padding:10px;margin:5px 0 15px 0;background:#FFF}
+#talkbacks .t_container .tc_reply {cursor:pointer;text-decoration:underline}
+#talkbacks .t_container .tc_delete {cursor:pointer;text-decoration:underline}
+#talkbacks .t_container .tc_close {float:right;cursor:pointer}
+#talkbacks .t_container .tc_title {font-weight:bold}
+#talkbacks .t_container .tc_description {padding-bottom:10px}
+#talkbacks .t_container .scoring {float:left}
+#talkbacks .seperator {height:10px;margin-top:10px;border-top:1px solid #EFEFEF;font-size:5px}
+#talkbacks .actions {text-align:right;color:#777}
+#talkbacks .actions.bottom table {float:right}
+#talkbacks .actions.bottom table .tc_reply {color:#3366CC;font-size:11px}
+#talkbacks .actions.bottom table .tc_delete {color:#3366CC;font-size:11px}
+#talkbacks .actions.bottom table .sign {font-size:11px;text-decoration:none}
+#talkbacks .actions a {color:#777}
+#talkbacks .actions a.question_button {background:none;color:#333;text-decoration:underline;cursor:pointer;height:auto;font-weight:bold}
+#talkbacks .actions td.actions_right_col {font-weight:normal}
+#talkbacks .actions td.actions_left_col {text-align:left}
+#talkbacks .link_to_full_list {padding-top:5px;text-align:right}
+#talkbacks .scoring {float:right;direction:ltr}
+.talkbacks_form__container {display:none;padding-top:20px}
+.talkback_form {width:100%}
+.talkback_form .container {width:100%}
+.talkback_form input {width:120px;border:1px solid #CCC;background:#FFF}
+.talkback_form select {width:120px;_position:relative;_top:0;border:1px solid #CCC;background:#FFF}
+.talkback_form textarea {width:120px;border:1px solid #CCC;background:#FFF}
+.talkback_form .medium {width:250px}
+.talkback_form .long {width:100%}
+.talkback_form .button {font-weight:bold;text-align:center;width:60px;margin:0}
+.talkback_form .submit_container {text-align:right;direction:ltr}
+.talkback_form .submit {color:#FFF!important;font-weight:bold;text-align:center;width:60px;background:#DA2128}
