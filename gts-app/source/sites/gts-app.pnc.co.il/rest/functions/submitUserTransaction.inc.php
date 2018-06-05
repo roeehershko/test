@@ -378,7 +378,6 @@ function submitUserTransaction($args) {
     if (!$merchants = authenticateUser($args->username, $args->password, $authenticate__error)) {
         $error = err($authenticate__error, false, $args->lang);
 
-
         /*
         } elseif (!$merchant['support_new_trans']) {
             $error = err(90, false, $args->lang);

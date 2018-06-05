@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^invoices/([^/]+)/(\d+)\.html$ invoices.php?trans_id=$2&auth=$1&%{QUERY_STRING}
+RewriteRule ^invoices/([^/]+)/(\d+)\.pdf$ invoices.php?trans_id=$2&auth=$1&mode=pdf&%{QUERY_STRING}
+RewriteRule ^signatures/([^/]+)/(\d+)\.png$ signatures.php?trans_id=$2&auth=$1&%{QUERY_STRING}
+RewriteRule ^(en|he|ar|ru)/?(.*)$ $2?lang=$1&%{QUERY_STRING}

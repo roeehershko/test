@@ -3,6 +3,9 @@ FROM dukim/centos-httpd2-php5.4
 # Define execution user
 USER root
 
+# Install CURL (Healthcheck tool)
+RUN yum -y update && yum -y install curl
+
 # Define working directory
 WORKDIR /var/www
 

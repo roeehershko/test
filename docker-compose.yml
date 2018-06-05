@@ -1,44 +1,53 @@
 version: "3.3"
 services:
-  nginx:
-    build: ./nginx
-    env_file:
-      - ./.env
-    depends_on:
-      - mysql
-      - gts-app
-      - gts-con
+  gts-app-test:
+    image: php:apache-stretch
+    volumes:
+      - ./php7:/var/www/html
+    ports:
+      - 8080:80
+  gts-con:
+    build: ./gts-con
     ports:
       - 443:443
       - 80:80
-    networks:
-      backend:
-  gts-con:
-    build: ./gts-con
     volumes:
       - ./gts-con/source/apps:/var/www/apps
       - ./gts-con/source/sites:/var/www/sites
     networks:
-      backend:
+      frontend:
         aliases:
           - ${CON_HOST}
     env_file:
-      - ./.env
+      - ./gts-con/.env
     depends_on:
       - mysql
   gts-app:
     build: ./gts-app
+    ports:
+      - 90:443
     volumes:
       - ./gts-app/source/apps:/var/www/apps
       - ./gts-app/source/sites:/var/www/sites
     networks:
-      backend:
+      frontend:
         aliases:
           - ${APP_HOST}
-    ports:
-      - 8080:443
+      encryption:
     env_file:
-      - ./.env
+      - ./gts-app/.env
+    depends_on:
+      - mysql
+  gts-enc:
+    build: ./gts-enc
+    volumes:
+      - ./gts-enc/source/sites:/var/www/sites
+    networks:
+      encryption:
+        aliases:
+          - ${ENC_HOST}
+    env_file:
+      - ./gts-enc/.env
     depends_on:
       - mysql
   mysql:
@@ -46,7 +55,8 @@ services:
     ports:
       - 3306:3306
     networks:
-      - backend
+      - frontend
+      - encryption
     volumes:
       - mysqldata:/var/lib/mysql
     environment:
@@ -54,4 +64,5 @@ services:
 volumes:
     mysqldata:
 networks:
-  backend:
+  frontend:
+  encryption:

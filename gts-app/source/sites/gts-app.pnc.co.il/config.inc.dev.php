@@ -13,7 +13,7 @@
 
     define('GTS_APP_HOST', 'gts-app');
     define('GTS_CON_HOST', 'gts-con');
-    define('GTS_ENC_HOST', 'gts-enc.pnc.co.il');
+    define('GTS_ENC_HOST', 'gts-enc');
 
     if ($_ENV['GTS_ENV'] === 'development') {
         $_SERVER['REMOTE_ADDR'] = '127.0.0.1';

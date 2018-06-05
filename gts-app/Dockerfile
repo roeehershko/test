@@ -3,6 +3,8 @@ FROM dukim/centos-httpd2-php5.4
 # Define execution user
 USER root
 
+RUN yum -y install curl
+
 # Define working directory
 WORKDIR /var/www
 
@@ -25,9 +27,17 @@ COPY conf/httpd-ssl-pass-dialog /usr/libexec/httpd-ssl-pass-dialog
 # Copy php.ini file
 COPY conf/php.ini /usr/local/lib/php.ini
 
+# Install Composer
+RUN cd /var/www/sites/gts-app.pnc.co.il && \
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');" && \
+    php composer.phar install --ignore-platform-reqs
+
 # Copy init file
 COPY conf/init.sh /init.sh
-
+RUN chmod 777 -R /init.sh
 
 # Expose application ports
 EXPOSE 80

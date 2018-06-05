@@ -20,7 +20,6 @@ recursive('strip_tags', $_POST);
 
 if ($_POST['json']) {
     header('Content-type: application/json');
-
     exit(json_encode(array(
         'success' => userLogIn(mysql_real_escape_string($_POST['email']), mysql_real_escape_string($_POST['password'])) ? true : false
     )));
@@ -37,8 +36,10 @@ if ($_POST['json']) {
     
     if (!$errors) {
         recursive('mysql_real_escape_string', $_POST);
+
         if (userLogIn($_POST['email'], $_POST['password'])) {
             if ($_POST['referrer']) {
+
                 header('Location: ' . href(rawurldecode($_POST['referrer'])));
             } else {
                 header('Location: ' . href('/'));

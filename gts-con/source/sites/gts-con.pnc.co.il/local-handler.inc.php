@@ -1524,6 +1524,7 @@
 				'content' => json_encode(strip_nulls($request))
 			)
 		)));
+
 		$response = json_decode($response, true);
 
 		//echo '<pre>'; print_r($response); echo '</pre>';

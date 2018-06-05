@@ -3,13 +3,12 @@
 define('DB_SERVER', $_ENV['DB_SERVER']);
 define('DB_USERNAME', $_ENV['DB_USERNAME']);
 define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
-define('DB_NAME', $_ENV['CON_DB_NAME']);
+define('DB_NAME', $_ENV['DB_NAME']);
 
 define('VERSION', 'v1.4');
 
 define('GTS_APP_HOST', $_ENV['APP_HOST']);
-define('GTS_CON_HOST', $_ENV['CON_HOST']);
-define('GTS_ENC_HOST', 'gts-enc.pnc.co.il');
+define('GTS_CON_HOST', $_ENV['HOSTNAME']);
 
 define('GTS_APP_URL_SCHEME', 'verifonescheme');
 
@@ -25,11 +24,11 @@ define('SMS_PASSWORD', '328577fXD.h');
 define('AES_PASSPHRASE', 'AOldaj56:scW1DPz4');
 
 // Development Variables
-define('BOUNCE_HOST', $_ENV['CON_HOST']);
-define('HTTPS_URL', 'https://'.$_ENV['CON_HOST'].'/');
-define('HTTP_URL', 'http://'.$_ENV['CON_HOST'].'/');
-define('SITE_NAME', $_ENV['CON_HOST']);
-define('SITE_URL', 'http://'.$_ENV['CON_HOST'].'/');
+define('BOUNCE_HOST', $_ENV['HOSTNAME']);
+define('HTTPS_URL', 'https://'.$_ENV['HOSTNAME'].'/');
+define('HTTP_URL', 'http://'.$_ENV['HOSTNAME'].'/');
+define('SITE_NAME', $_ENV['HOSTNAME']);
+define('SITE_URL', 'http://'.$_ENV['HOSTNAME'].'/');
 
 // --------------------
 if ($_GET['mobile'] == 1 || strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'iphone') !== false || strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'ipad') !== false || strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'ipod') !== false || strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'android') !== false) {

@@ -1,0 +1,126 @@
+#!/usr/bin/perl -w
+
+use strict;
+use Crypt::DES;
+
+sub DesEnc
+{
+  my($key, $data) = @_;
+  my $cipher = new Crypt::DES $key;
+  my $ciphertext = $cipher->encrypt($data);
+  return ($ciphertext);
+}
+
+sub DesDec
+{
+  my($key, $data) = @_;
+  my $cipher = new Crypt::DES $key;
+  my $plaintext = $cipher->decrypt($data);
+  return ($plaintext);
+}
+
+sub TDesEnc
+{
+  my($DKey, $data) = @_;
+  my $lkey = pack("H16", substr($DKey,0,16));
+  my $rkey = pack("H16", substr($DKey,16,16));
+  my $out = &DesEnc($lkey, pack("H16", $data));
+  $out = &DesDec($rkey, $out);
+  $out = &DesEnc($lkey, $out);
+  return (unpack("H16", $out));
+}
+
+sub TDesDec
+{
+  my($DKey, $data) = @_;
+  my $lkey = pack("H16", substr($DKey,0,16));
+  my $rkey = pack("H16", substr($DKey,16,16));
+  my $out = &DesDec($lkey, pack("H16", $data));
+  $out = &DesEnc($rkey, $out);
+  $out = &DesDec($lkey, $out);
+  return (unpack("H16", $out));
+}
+
+sub GetIPEK
+{
+  my($BDK, $KSN) = @_;
+  my $lIPEK = &TDesEnc($BDK, $KSN);
+  my $mask = pack("H16", "C0C0C0C000000000");
+  my $lBDK = pack("H16", substr($BDK,  0,  16)) ^ $mask;
+  my $rBDK = pack("H16", substr($BDK, 16,  16)) ^ $mask;
+  my $vBDK = unpack("H16", $lBDK).unpack("H16", $rBDK);
+  my $rIPEK = &TDesEnc($vBDK, $KSN);
+  return ($lIPEK.$rIPEK);
+}
+
+sub FindKey
+{
+  my($CURKEY, $KSN) = @_;
+  my $CKeyL = pack("H16", substr($CURKEY, 0,16));
+  my $CKeyR = pack("H16", substr($CURKEY,16,16));
+  my $R8 = pack("H16", $KSN);
+  $R8 = $R8 & pack("H16", "FFFFFFFFFFE00000");
+  my $R3 = eval("0x".substr($KSN,10,6));
+  $R3 = $R3 & eval("0x"."1FFFFF");
+  my $SR = pack("H16","0000000000100000");
+  my $mask = pack("H16", "C0C0C0C000000000");
+  my $iSR = eval("0x".unpack("H*",$SR));  
+
+  #TAG1
+  while ($iSR != 0)
+  {
+    $iSR = eval("0x".unpack("H*",$SR));
+	if (($iSR & $R3) != 0)  
+	{  
+      $R8 = $R8 | $SR;
+      my $R8A = $R8 ^ $CKeyR;
+      my $DesRet = DesEnc($CKeyL, $R8A);
+      $R8A = $DesRet ^ $CKeyR;
+      $CKeyL = $CKeyL ^ $mask;
+      $CKeyR = $CKeyR ^ $mask;
+      my $R8B = $R8 ^ $CKeyR;
+      $DesRet = DesEnc($CKeyL, $R8B);
+      $R8B = $DesRet ^ $CKeyR;
+      $CKeyR = $R8A;
+      $CKeyL = $R8B;
+    }
+    #TAG2
+	$iSR >>= 1;
+	$SR = pack("H16", sprintf("%016x",$iSR));
+  }
+
+  my $CKey = unpack("H16",$CKeyL).unpack("H16",$CKeyR);
+  my $VKeyL = $CKeyL ^ pack("H16", "0000000000FF0000");
+  my $VKeyR = $CKeyR ^ pack("H16", "0000000000FF0000");
+  my $VKey = unpack("H16",$VKeyL).unpack("H16",$VKeyR);
+  my $TDesRet1 = &TDesEnc($VKey, unpack("H16",$VKeyL));
+  my $TDesRet2 = &TDesEnc($VKey, unpack("H16",$VKeyR));
+  return ($TDesRet1.$TDesRet2);
+}
+
+###
+
+my $BDK = $ARGV[0];
+my $SignOn = $ARGV[1];
+my $EncTK2 = $ARGV[2];
+
+my $KSN = substr($SignOn, 1, 8);
+$KSN = $KSN.substr($SignOn, 10, 8);
+$KSN = $KSN.substr($SignOn, 19, 4);
+
+my $vBatt = eval("0x".substr($SignOn, 37, 4));
+my $FWVER = substr($SignOn, 41, 1).".".substr($SignOn, 42, 1);
+my $IPEK = &GetIPEK($BDK, substr($KSN,0,16));
+my $DKey = &FindKey($IPEK, substr($KSN,4,16));
+my $Tk2 = TDesDec($DKey, substr($EncTK2, 1,8).substr($EncTK2,10,8));
+
+$Tk2 = $Tk2.TDesDec($DKey, substr($EncTK2,19,8).substr($EncTK2,28,8));
+$Tk2 = $Tk2.TDesDec($DKey, substr($EncTK2,37,8).substr($EncTK2,46,8));
+
+my $i = index($Tk2,"d");
+my $j = index($Tk2,"f");
+my $k = substr($Tk2,0,1);
+
+$Tk2 = substr($Tk2,1,$i-1)."=".substr($Tk2,$i+1,$j-$i-1);
+
+print $Tk2;

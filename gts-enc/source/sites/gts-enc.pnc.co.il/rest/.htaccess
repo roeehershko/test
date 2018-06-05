@@ -1,0 +1,6 @@
+DirectoryIndex server.php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(help/?)?([^\/]*)$ server.php/?help=$1&func=$2&%{QUERY_STRING}

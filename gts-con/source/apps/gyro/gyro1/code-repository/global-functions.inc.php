@@ -73,6 +73,7 @@ function userLogIn($email, $password) {
 
         return $userId;
     } else {
+
         gyroLog('gyro_userLogIn_init - fail', $email);
         return false;
     }
