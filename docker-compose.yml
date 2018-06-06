@@ -1,11 +1,19 @@
 version: "3.3"
 services:
-  gts-app-test:
-    image: php:apache-stretch
+  tgw-api-test:
+    build: ./api
+    command: sleep 3600
     volumes:
-      - ./php7:/var/www/html
+      - ./api:/var/www/app
     ports:
       - 8080:80
+    networks:
+      frontend:
+        aliases:
+          - ${HOSTNAME}
+      encryption:
+    env_file:
+      - ./api/.env
   gts-con:
     build: ./gts-con
     ports:
@@ -17,7 +25,7 @@ services:
     networks:
       frontend:
         aliases:
-          - ${CON_HOST}
+          - ${HOSTNAME}
     env_file:
       - ./gts-con/.env
     depends_on:
@@ -32,7 +40,7 @@ services:
     networks:
       frontend:
         aliases:
-          - ${APP_HOST}
+          - ${HOSTNAME}
       encryption:
     env_file:
       - ./gts-app/.env
@@ -45,7 +53,7 @@ services:
     networks:
       encryption:
         aliases:
-          - ${ENC_HOST}
+          - ${HOSTNAME}
     env_file:
       - ./gts-enc/.env
     depends_on:
